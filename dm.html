@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery实现弹幕鲜果</title>
+	<style>
+		h3{
+			text-align: center;
+			width: 100px;
+			height: 30px;
+			line-height: 30px;
+			/*background: red;*/
+			position: relative;
+			left: -120px;
+		}
+	</style>
+</head>
+<body>
+	<h3>你好啊</h3>
+	<h3>哈喽</h3>
+	<h3>弹幕</h3>
+	<script src="jquery-3.2.1.js"></script>
+
+	<script>
+		// 获取可视区域宽度
+	 	var r=$(window).width();
+	 	// console.log(r);
+		$(function(){
+			$('h3').delay(3000).animate({
+				left:r+"px",
+			},6000);
+
+		$('button').click(function(){
+			$('h3').stop();
+		});
+		});
+
+	</script>
+	<button>暂停</button>
+</body>
+</html>
